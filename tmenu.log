@@ -1,0 +1,263 @@
+
+2024-01-10 | 03:42:32.714869 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-10 | 03:42:32.719855 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-10 | 03:42:32.719855 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-10 | 03:42:32.719855 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-10 | 03:42:32.720853 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-10 | 03:43:39.833745 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-10 | 03:43:45.985570 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 16:23:07.152423 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:23:07.156441 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:23:07.157452 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:23:07.157452 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:23:07.157452 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:23:50.283422 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 16:29:09.079260 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:29:09.080257 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:29:09.080257 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:29:09.080257 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:29:09.080257 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:31:01.461104 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:31:01.461104 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:31:01.462072 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:31:01.463071 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:31:01.464068 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:32:19.706329 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-11 | 16:32:36.997401 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-11 | 16:32:57.704763 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 16:48:19.840027 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:48:19.840027 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:48:19.840027 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:48:19.841024 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:48:19.841024 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:50:33.031511 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:50:33.032508 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:50:33.032508 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:50:33.032508 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:50:33.033509 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:50:54.970063 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 16:50:58.692412 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 16:50:58.693404 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 16:50:58.693404 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 16:50:58.693404 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 16:50:58.693404 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 16:51:21.001621 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-11 | 16:51:57.875022 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 17:02:52.418296 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:02:52.418296 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:02:52.418296 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:02:52.419294 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:02:52.419294 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:03:47.303152 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:03:47.303152 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:03:47.304150 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:03:47.304150 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:03:47.304150 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:05:08.233172 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:05:08.233172 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:05:08.233172 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:05:08.234170 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:05:08.234170 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:05:26.940350 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 17:06:46.940539 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:06:46.941548 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:06:46.941548 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:06:46.941548 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:06:46.941548 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:07:18.666419 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 17:08:59.658870 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:08:59.658870 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:08:59.658870 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:08:59.658870 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:08:59.659867 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:09:15.642696 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 17:10:51.471554 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:10:51.471554 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:10:51.471554 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:10:51.471554 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:10:51.472552 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:11:36.291884 | Function 'save_settings' >> 
+Info message: Settings is saved.
+2024-01-11 | 17:11:39.697967 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 17:28:17.852262 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:28:17.853233 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:28:17.853233 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:28:17.853233 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:28:17.853233 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:29:05.871276 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 17:29:05.872273 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 17:29:05.872273 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 17:29:05.873271 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 17:29:05.873271 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 17:29:51.231537 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 19:12:17.402155 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 19:12:17.402155 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 19:12:17.402155 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 19:13:18.143794 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 19:13:18.143794 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 19:13:18.143794 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 19:13:18.143794 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 19:13:18.144790 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 19:13:36.299425 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-11 | 19:14:05.186224 | Function 'clear_channel_history' >> 
+Info message: 'Docs' and 'History' folders is clear.
+2024-01-11 | 19:14:12.436189 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-11 | 19:17:23.669515 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 19:17:23.669515 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 19:17:23.670480 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 19:17:23.670480 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 19:17:23.670480 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-11 | 19:34:26.474529 | Function 'getset_iniparam' >> 
+Error message: 'MAIN'
+2024-01-11 | 19:34:26.474529 | Function 'getset_iniparam' >> 
+Error message: 'MAIN'
+2024-01-11 | 19:34:26.474529 | Function 'getset_iniparam' >> 
+Error message: 'MAIN'
+2024-01-11 | 19:35:57.047702 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-11 | 19:35:57.047702 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-11 | 19:35:57.047702 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-11 | 19:35:57.047702 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-11 | 19:35:57.048700 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-15 | 14:46:43.854803 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-15 | 14:46:43.854803 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-15 | 14:46:43.855800 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-15 | 14:46:43.855800 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-15 | 14:46:43.855800 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-16 | 04:02:13.576757 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-16 | 04:02:13.576757 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-16 | 04:02:13.577729 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-16 | 04:02:13.577729 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-16 | 04:02:13.577729 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-16 | 04:02:44.749875 | Function 'exit_program' >> 
+Info message: Stop program.
+2024-01-16 | 04:02:47.418524 | Function 'chk_lic_file' >> 
+Info message: Step 1 Checking -> passed!
+2024-01-16 | 04:02:47.418524 | Function 'chk_lic_file' >> 
+Info message: Step 2 Checking -> passed!
+2024-01-16 | 04:02:47.418524 | Function 'chk_lic_file' >> 
+Info message: Step 3 Checking -> passed!
+2024-01-16 | 04:02:47.419490 | Function 'run_tmenu' >> 
+Info message: License validation status: 'True'.
+2024-01-16 | 04:02:47.419490 | Function 'run_tmenu' >> 
+Info message: Start program.
+2024-01-16 | 04:07:28.499088 | Function 'exit_program' >> 
+Info message: Stop program.
