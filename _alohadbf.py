@@ -58,12 +58,12 @@ def write_data(rows: list, aloha_groups: str, docs_path: str, images_path: str, 
             json_doc = j.dumps(item, indent=2, ensure_ascii=False)
 
             # Write item json to file
-            with open(f"{docs_path}/{item['Code']}{item['Name'].replace('/', ' ')}.json", "w", encoding="utf-8") as file:
+            with open(f"{docs_path}/{item['Code']}.json", "w", encoding="utf-8") as file:
                 file.write(json_doc)
 
-
-data_rows = get_data(c.ALOHA_DB)
-write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+# DEBUG -------------------
+# data_rows = get_data(c.ALOHA_DB)
+# write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 
 
 

@@ -71,7 +71,7 @@ def write_data(rows: list, rk7groups: str, docs_path: str, images_path: str, noi
             json_doc = j.dumps(item, indent=2, ensure_ascii=False)
 
             # Write item json to file
-            with open(f"{docs_path}/{item['Code']} {item['Name']}.json", "w", encoding="utf-8") as file:
+            with open(f"{docs_path}/{item['Code']}.json", "w", encoding="utf-8") as file:
                 file.write(json_doc)
 
 

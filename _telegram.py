@@ -64,7 +64,8 @@ def send_docs_to_channel(docs: str, currency: str, operator: str, bottoken: str,
                 # Inline keyboard markup with "Order" button
                 inline_keyboard = [
                     [
-                        {"text": "Order", "url": f't.me/{operator}'}
+                        {"text": "Chat", "url": f't.me/{operator}'},
+                        {"text": "Add to Cart", "callback_data": "add_to_cart"}
                     ]
                 ]
                 # send photo and message with inline keyboard

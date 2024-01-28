@@ -3,27 +3,44 @@
 import _constants as c
 import _utils as u
 import _rk7sql as q
+import _alohadbf as a
 import _telegram as t
 from _iface import TMenuApp
+import _lic as lic
+# gui modules
 import tkinter as tk
 from tkinter import messagebox
-import _lic as lic
 
 
 def get_data_button():
     func_name = u.get_func_name()
     if u.is_directory_empty(c.DOCS) and u.is_directory_empty(c.HISTORY):
+
         try:
-            connection = q.connect_server(c.SRV_NAME, c.DB_NAME, c.USR_NAME, c.DECODED_PSW)
-            rows = q.get_data(connection, c.RK7QUERY)
-            q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
-            q.close_connection(connection)
+            if c.MODE == '1':  # Режим выгрузки данных из RK7 SQL DB
+                connection = q.connect_server(c.SRV_NAME, c.DB_NAME, c.USR_NAME, c.DECODED_PSW)
+                rows = q.get_data(connection, c.RK7QUERY)
+                q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+                q.close_connection(connection)
+
+            elif c.MODE == '2':  # Режим выгрузки данных из ALOHA POS
+                data_rows = a.get_data(c.ALOHA_DB)
+                a.write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+
+            elif c.MODE == '3':  # Режим выгрузки данных из CSV
+
+                # Логика выгрузки данных
+                pass
+
+            else:  # DEBUG
+                u.log_msg(func_name, True, "Error. Check INI-file [MAIN]mode param: 1,2 or 3.")
+                tk.messagebox.showerror("Get Data - Error!", "Error. Check INI-file [MAIN]mode param: 1,2 or 3.")
+
         except Exception as e:
             u.log_msg(func_name, True, e)
             tk.messagebox.showerror('Get Data - Error!', 'Something went wrong.\nCheck log-file for details.')
         else:
             tk.messagebox.showinfo('Get Data - Ok!', 'Done! Now you can send it to Telegram Channel.')
-            q.close_connection(connection)
     else:
         tk.messagebox.showerror("Get Data - Error!", "Looks like the Data folder/Channel is not empty.\n"
                                 "Please, run first - 'Clear Data' function.")
@@ -81,19 +98,31 @@ def run_tmenu():
                                                     f"send request code to rodikov.pro@gmail.com\n\n"
                                                     f"{lc.gen_lic_rcode()}\nalredy copied to clipboard...\n")
 
-    # DEBUG main program actions ------------------------------------------------------------------------------
-
-    # # Getting SQL data & write to json
-    # connection = q.connect_server(c.SRV_NAME, c.DB_NAME, c.USR_NAME, c.DECODED_PSW)
-    # rows = q.get_data(connection, c.QUERY_NAME)
-    # q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
-    # q.close_connection(connection)
-    #
-    # # Telegram operations
-    # t.send_welcome_msg_to_channel(c.FIRST_MSG, c.RK7GROUPS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
-    # t.send_docs_to_channel(c.DOCS, c.CURRENCY, c.OPERATOR, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
-    # t.clear_channel_history(c.DOCS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
-    # u.write_text_to_file(c.MANUAL, c.MANUAL_CONTENT)
-
 
 run_tmenu()
+
+# DEBUG main program actions ------------------------------------------------------------------------------
+
+# Getting SQL RK7 data & write to json
+
+# connection = q.connect_server(c.SRV_NAME, c.DB_NAME, c.USR_NAME, c.DECODED_PSW)
+# rows = q.get_data(connection, c.QUERY_NAME)
+# q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+# q.close_connection(connection)
+
+# Telegram operations
+
+# t.send_welcome_msg_to_channel(c.FIRST_MSG, c.RK7GROUPS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
+# t.send_docs_to_channel(c.DOCS, c.CURRENCY, c.OPERATOR, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
+# t.clear_channel_history(c.DOCS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
+# u.write_text_to_file(c.MANUAL, c.MANUAL_CONTENT)
+
+# Aloha DBF operations
+
+
+
+
+
+
+
+

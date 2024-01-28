@@ -86,12 +86,14 @@ class TMenuApp:
 
     @staticmethod
     def save_settings(settings_window, entries):
+
         func_name = u.get_func_name()
 
         sections = {
             'SQL': ['server', 'db', 'usr'],
             'DATA': ['docs', 'images', 'history', 'noimage'],
-            'RK7': ['groups', 'query'],
+            'RK7': ['rk7groups', 'rk7query'],
+            'ALOHA': ['adb', 'agroups'],
             'TELEGRAM': ['channelid', 'operator', 'currency']
         }
 
@@ -128,8 +130,8 @@ class TMenuApp:
 
         # Добавьте элементы управления и функциональность для настроек
         settings_window.geometry("300x650")  # set size
-        settings_window.minsize(300, 650)
-        settings_window.maxsize(300, 650)
+        settings_window.minsize(300, 750)
+        settings_window.maxsize(300, 750)
         settings_window.iconbitmap('_logo.ico')  # set ico
 
         # [MAIN] Section
@@ -218,6 +220,23 @@ class TMenuApp:
         rk7_query_entry.insert(0, c.RK7QUERY)
         rk7_query_entry.grid(row=2, column=1)
 
+        # [ALOHA] Section
+
+        aloha_frame = ttk.LabelFrame(settings_window, text="[ALOHA]", padding=10)
+        aloha_frame.pack(padx=10, pady=5, anchor='w')
+
+        aloha_db_label = tk.Label(aloha_frame, text="db: ")
+        aloha_db_label.grid(row=1, column=0, sticky="nw")
+        aloha_db_entry = tk.Entry(aloha_frame, width=30)
+        aloha_db_entry.insert(0, c.ALOHA_DB)
+        aloha_db_entry.grid(row=1, column=1)
+
+        aloha_groups_label = tk.Label(aloha_frame, text="groups: ")
+        aloha_groups_label.grid(row=2, column=0, sticky="nw")
+        aloha_groups_entry = tk.Entry(aloha_frame, width=30)
+        aloha_groups_entry.insert(0, c.ALOHA_GROUPS)
+        aloha_groups_entry.grid(row=2, column=1)
+
         # [TELEGRAM] Section
 
         tlgrm_frame = ttk.LabelFrame(settings_window, text="[TELEGRAM]", padding=10)
@@ -265,8 +284,11 @@ class TMenuApp:
             'history': data_history_entry,
             'noimage': data_noimage_entry,
 
-            'groups': rk7_groups_entry,
-            'query': rk7_query_entry,
+            'rk7groups': rk7_groups_entry,
+            'rk7query': rk7_query_entry,
+
+            'adb': aloha_db_entry,
+            'agroups': aloha_groups_entry,
 
             'bottoken': tlgrm_bottoken_entry,
             'channelid': tlgrm_channelid_entry,

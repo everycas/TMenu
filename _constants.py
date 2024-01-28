@@ -1,17 +1,16 @@
 import _utils as u
 
+# GLOBAL CONSTANTS
+
+CODEPAGE = 'cp1251'
 LOGFILE = 'tmenu.log'
 INIFILE = 'tmenu.ini'
 INI_CONTENT = """[MAIN]
-mode = SQL 
-language = ru
-login = YkFja2JVcm5Fcg==
-
-[SQL]
-server = 127.0.0.1,1433
-db = RK7
-usr = telegram
-psw = 
+;get json data from: 1 - RK7 SQL, 2 - ALOHA DBF, 3 - csv
+mode = 1
+cart = 1
+language =
+login = MQ==
 
 [DATA]
 docs = files/docs
@@ -20,15 +19,30 @@ history = files/history
 noimage = _noimage.jpg
 firstmsg = _fistmsg.txt
 
+[SQL]
+server = 127.0.0.1,1433
+db = RK7_KATS
+usr = telegram
+psw = dGVsZWdyYW0=
+
 [RK7]
-groups = item group names from menu/menu rk7 through a comma. Sample: Bar, Kitchen
+groups = ОДЕЖДА
 query = rk7query.sql
 
+[ALOHA]
+db = AlohaTS\DATA
+shifts = AlohaTS
+
 [TELEGRAM]
-bottoken = encoded bot token
-channelid = @your channel/group
-operator = @user name
+bottoken = Njg5MTUyNTE1MzpBQUV0WFJvcDl0dU12LTRCMEJqWmNDLVcwZlhCdE5fdnc4MA==
+channelid = @rodikov_pro_integrations
+operator = Dmitry_Rodikov
 currency = GEL
+
+[TSERV]
+port = 8443
+
+
 
 """
 
@@ -53,8 +67,8 @@ HISTORY = u.getset_iniparam('DATA', 'history')
 NOIMAGE = u.getset_iniparam('DATA', 'noimage')
 
 # INI RK7 CONTENT
-RK7GROUPS = u.getset_iniparam('RK7', 'groups')
-RK7QUERY = u.getset_iniparam('RK7', 'query')
+RK7GROUPS = u.getset_iniparam('RK7', 'rk7groups')
+RK7QUERY = u.getset_iniparam('RK7', 'rk7query')
 RK7QUERY_CONTENT = """
 SELECT
     m.[SIFR],
@@ -74,6 +88,10 @@ WHERE
     p.[VALUE] > 0 AND
     m.[STATUS] = 3;
 """
+
+# INI ALOHA CONTENT
+ALOHA_DB = u.getset_iniparam('ALOHA', 'adb')
+ALOHA_GROUPS = u.getset_iniparam('ALOHA', 'agroups')
 
 # INI TELEGRAM CONTENT
 ENCODED_BOTTOKEN = u.getset_iniparam('TELEGRAM', 'bottoken')
@@ -100,6 +118,11 @@ ABOUT_CONTENT = ("Telegram Menu v 1.0\n"
                  
                  "For License & Support:\n"
                  "rodikov.pro@gmail.com\n\n")
+
+# INI TSERV CONTENT
+TSERV_PORT = int(u.getset_iniparam('TSERV', 'port'))
+TSERV_DOMAIN_NAME = '0.0.0.0'
+TSERV_WEBHOOK_PATH = '/files/webhook'
 
 MANUAL = 'tmenu.txt'
 MANUAL_CONTENT = """ Инстукция
@@ -163,3 +186,4 @@ Price - цена, Group - группа товара, Image - картинка т
 
 
 """
+
