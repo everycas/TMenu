@@ -24,6 +24,7 @@ def get_data(aloha_db_path: str):
                 rec['LONGNAME'].rstrip().replace('\\n', ' '),
                 rec['PRICE']
             ] for rec in table if any(cit[0] == rec['ID'] for cit in categs)]
+
     rows = [itm + [cat[2]] for itm in itms for cat in categs if itm[0] == cat[0]]
     return sorted(rows, key=lambda x: x[0])[1:]  # сортировка по возраст. ID товара, [1:] - без позиции "Все меню"
 

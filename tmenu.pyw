@@ -4,6 +4,7 @@ import _constants as c
 import _utils as u
 import _rk7sql as q
 import _alohadbf as a
+import _shopify as s
 import _telegram as t
 from _iface import TMenuApp
 import _lic as lic
@@ -28,9 +29,8 @@ def get_data_button():
                 a.write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 
             elif c.MODE == '3':  # Режим выгрузки данных из CSV
-
-                # Логика выгрузки данных
-                pass
+                csv_rows = s.get_data(c.CSV_FILE, c.CSV_FROM, c.CSV_TO, c.CSV_GROUP_BY, c.CSV_GROUPS, c.CODEPAGE)
+                s.write_data(csv_rows, c.CSV_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 
             else:  # DEBUG
                 u.log_msg(func_name, True, "Error. Check INI-file [MAIN]mode param: 1,2 or 3.")
@@ -110,19 +110,20 @@ run_tmenu()
 # q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 # q.close_connection(connection)
 
+# Aloha DBF operations
+
+# data_rows = a.get_data(c.ALOHA_DB)
+# a.write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+
+# SHOPIFY CSV operations
+
+# csv_rows = s.get_data(c.CSV_FILE, c.CSV_FROM, c.CSV_TO, c.CSV_GROUP_BY, c.CSV_GROUPS, c.CODEPAGE)
+# s.write_data(csv_rows, c.CSV_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
+
 # Telegram operations
 
 # t.send_welcome_msg_to_channel(c.FIRST_MSG, c.RK7GROUPS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
 # t.send_docs_to_channel(c.DOCS, c.CURRENCY, c.OPERATOR, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
 # t.clear_channel_history(c.DOCS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
 # u.write_text_to_file(c.MANUAL, c.MANUAL_CONTENT)
-
-# Aloha DBF operations
-
-
-
-
-
-
-
 
