@@ -93,6 +93,13 @@ WHERE
 ALOHA_DB = u.getset_iniparam('ALOHA', 'adb')
 ALOHA_GROUPS = u.getset_iniparam('ALOHA', 'agroups')
 
+# INI SHOPIFY CONTENT
+CSV_FILE = u.getset_iniparam('SHOPIFY', 'csv')
+CSV_FROM = u.getset_iniparam('SHOPIFY', 'from')
+CSV_TO = u.getset_iniparam('SHOPIFY', 'to')
+CSV_GROUPS = u.getset_iniparam('SHOPIFY', 'groups')
+CSV_GROUP_BY = u.getset_iniparam('SHOPIFY', 'group_by')
+
 # INI TELEGRAM CONTENT
 ENCODED_BOTTOKEN = u.getset_iniparam('TELEGRAM', 'bottoken')
 DECODED_BOTTOKEN = u.decode_text(ENCODED_BOTTOKEN)

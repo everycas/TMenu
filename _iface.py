@@ -90,6 +90,7 @@ class TMenuApp:
         func_name = u.get_func_name()
 
         sections = {
+            'MAIN': ['mode'],
             'SQL': ['server', 'db', 'usr'],
             'DATA': ['docs', 'images', 'history', 'noimage'],
             'RK7': ['rk7groups', 'rk7query'],
@@ -97,6 +98,7 @@ class TMenuApp:
             'TELEGRAM': ['channelid', 'operator', 'currency']
         }
 
+        # Insert param from entry lines to ini
         for section, keys in sections.items():
             for key in keys:
                 value = entries[key].get()
@@ -129,9 +131,9 @@ class TMenuApp:
         settings_window.title("TMenu - Settings")
 
         # Добавьте элементы управления и функциональность для настроек
-        settings_window.geometry("300x650")  # set size
-        settings_window.minsize(300, 750)
-        settings_window.maxsize(300, 750)
+        settings_window.geometry("500x900")  # set size
+        settings_window.minsize(500, 900)
+        settings_window.maxsize(500, 900)
         settings_window.iconbitmap('_logo.ico')  # set ico
 
         # [MAIN] Section
@@ -141,9 +143,17 @@ class TMenuApp:
 
         main_login_label = tk.Label(main_frame, text="login: ")
         main_login_label.grid(row=1, column=0, sticky='nw')
-        main_login_entry = tk.Entry(main_frame, width=30)
+        main_login_entry = tk.Entry(main_frame, width=60)
         main_login_entry.insert(0, c.DECODED_LOGIN)
         main_login_entry.grid(row=1, column=1)
+
+        main_mode_label = tk.Label(main_frame, text="mode: ")
+        main_mode_label.grid(row=2, column=0, sticky='nw')
+        main_mode_entry = tk.Entry(main_frame, width=60)
+        main_mode_entry.insert(0, c.MODE)
+        main_mode_entry.grid(row=2, column=1)
+
+
 
         # [SQL] Section
 
@@ -152,25 +162,25 @@ class TMenuApp:
 
         sql_server_label = tk.Label(sql_frame, text="server: ")
         sql_server_label.grid(row=1, column=0, sticky='nw')
-        sql_server_entry = tk.Entry(sql_frame, width=30)
+        sql_server_entry = tk.Entry(sql_frame, width=60)
         sql_server_entry.insert(0, c.SRV_NAME)
         sql_server_entry.grid(row=1, column=1)
 
         sql_db_label = tk.Label(sql_frame, text="db: ")
         sql_db_label.grid(row=2, column=0, sticky="nw")
-        sql_db_entry = tk.Entry(sql_frame, width=30)
+        sql_db_entry = tk.Entry(sql_frame, width=60)
         sql_db_entry.insert(0, c.DB_NAME)
         sql_db_entry.grid(row=2, column=1)
 
         sql_usr_label = tk.Label(sql_frame, text="usr: ")
         sql_usr_label.grid(row=3, column=0, sticky="nw")
-        sql_usr_entry = tk.Entry(sql_frame, width=30)
+        sql_usr_entry = tk.Entry(sql_frame, width=60)
         sql_usr_entry.insert(0, c.USR_NAME)
         sql_usr_entry.grid(row=3, column=1)
 
         sql_psw_label = tk.Label(sql_frame, text="pass: ")
         sql_psw_label.grid(row=4, column=0, sticky="nw")
-        sql_psw_entry = tk.Entry(sql_frame, width=30)
+        sql_psw_entry = tk.Entry(sql_frame, width=60)
         sql_psw_entry.insert(0, c.DECODED_PSW)
         sql_psw_entry.grid(row=4, column=1)
 
@@ -181,25 +191,25 @@ class TMenuApp:
 
         data_docs_label = tk.Label(data_frame, text="docs: ")
         data_docs_label.grid(row=1, column=0, sticky="nw")
-        data_docs_entry = tk.Entry(data_frame, width=30)
+        data_docs_entry = tk.Entry(data_frame, width=60)
         data_docs_entry.insert(0, c.DOCS)
         data_docs_entry.grid(row=1, column=1)
 
         data_images_label = tk.Label(data_frame, text="images: ")
         data_images_label.grid(row=2, column=0, sticky="nw")
-        data_images_entry = tk.Entry(data_frame, width=30)
+        data_images_entry = tk.Entry(data_frame, width=60)
         data_images_entry.insert(0, c.IMAGES)
         data_images_entry.grid(row=2, column=1)
 
         data_history_label = tk.Label(data_frame, text="history: ")
         data_history_label.grid(row=3, column=0, sticky="nw")
-        data_history_entry = tk.Entry(data_frame, width=30)
+        data_history_entry = tk.Entry(data_frame, width=60)
         data_history_entry.insert(0, c.HISTORY)
         data_history_entry.grid(row=3, column=1)
 
         data_noimage_label = tk.Label(data_frame, text="noimage: ")
         data_noimage_label.grid(row=4, column=0, sticky="nw")
-        data_noimage_entry = tk.Entry(data_frame, width=30)
+        data_noimage_entry = tk.Entry(data_frame, width=60)
         data_noimage_entry.insert(0, c.NOIMAGE)
         data_noimage_entry.grid(row=4, column=1)
 
@@ -210,15 +220,17 @@ class TMenuApp:
 
         rk7_groups_label = tk.Label(rk7_frame, text="groups: ")
         rk7_groups_label.grid(row=1, column=0, sticky="nw")
-        rk7_groups_entry = tk.Entry(rk7_frame, width=30)
+        rk7_groups_entry = tk.Entry(rk7_frame, width=60)
         rk7_groups_entry.insert(0, c.RK7GROUPS)
         rk7_groups_entry.grid(row=1, column=1)
 
         rk7_query_label = tk.Label(rk7_frame, text="query: ")
         rk7_query_label.grid(row=2, column=0, sticky="nw")
-        rk7_query_entry = tk.Entry(rk7_frame, width=30)
+        rk7_query_entry = tk.Entry(rk7_frame, width=60)
         rk7_query_entry.insert(0, c.RK7QUERY)
         rk7_query_entry.grid(row=2, column=1)
+
+
 
         # [ALOHA] Section
 
@@ -227,15 +239,52 @@ class TMenuApp:
 
         aloha_db_label = tk.Label(aloha_frame, text="db: ")
         aloha_db_label.grid(row=1, column=0, sticky="nw")
-        aloha_db_entry = tk.Entry(aloha_frame, width=30)
+        aloha_db_entry = tk.Entry(aloha_frame, width=60)
         aloha_db_entry.insert(0, c.ALOHA_DB)
         aloha_db_entry.grid(row=1, column=1)
 
         aloha_groups_label = tk.Label(aloha_frame, text="groups: ")
         aloha_groups_label.grid(row=2, column=0, sticky="nw")
-        aloha_groups_entry = tk.Entry(aloha_frame, width=30)
+        aloha_groups_entry = tk.Entry(aloha_frame, width=60)
         aloha_groups_entry.insert(0, c.ALOHA_GROUPS)
         aloha_groups_entry.grid(row=2, column=1)
+
+
+
+        # [SHOPIFY] Section
+
+        shopify_frame = ttk.LabelFrame(settings_window, text="[SHOPIFY]", padding=10)
+        shopify_frame.pack(padx=10, pady=5, anchor='w')
+
+        shopify_csv_label = tk.Label(shopify_frame, text="csv: ")
+        shopify_csv_label.grid(row=1, column=0, sticky="nw")
+        shopify_csv_entry = tk.Entry(shopify_frame, width=60)
+        shopify_csv_entry.insert(0, c.CSV_FILE)
+        shopify_csv_entry.grid(row=1, column=1)
+
+        shopify_from_label = tk.Label(shopify_frame, text="from: ")
+        shopify_from_label.grid(row=2, column=0, sticky="nw")
+        shopify_from_entry = tk.Entry(shopify_frame, width=60)
+        shopify_from_entry.insert(0, c.CSV_FROM)
+        shopify_from_entry.grid(row=2, column=1)
+
+        shopify_to_label = tk.Label(shopify_frame, text="to: ")
+        shopify_to_label.grid(row=3, column=0, sticky="nw")
+        shopify_to_entry = tk.Entry(shopify_frame, width=60)
+        shopify_to_entry.insert(0, c.CSV_TO)
+        shopify_to_entry.grid(row=3, column=1)
+
+        shopify_groups_label = tk.Label(shopify_frame, text="groups: ")
+        shopify_groups_label.grid(row=4, column=0, sticky="nw")
+        shopify_groups_entry = tk.Entry(shopify_frame, width=60)
+        shopify_groups_entry.insert(0, c.CSV_GROUPS)
+        shopify_groups_entry.grid(row=4, column=1)
+
+        shopify_groupby_label = tk.Label(shopify_frame, text="group_by: ")
+        shopify_groupby_label.grid(row=5, column=0, sticky="nw")
+        shopify_groupby_entry = tk.Entry(shopify_frame, width=60)
+        shopify_groupby_entry.insert(0, c.CSV_GROUP_BY)
+        shopify_groupby_entry.grid(row=5, column=1)
 
         # [TELEGRAM] Section
 
@@ -244,25 +293,25 @@ class TMenuApp:
 
         tlgrm_bottoken_label = tk.Label(tlgrm_frame, text="bottoken: ")
         tlgrm_bottoken_label.grid(row=1, column=0, sticky="nw")
-        tlgrm_bottoken_entry = tk.Entry(tlgrm_frame, width=30)
+        tlgrm_bottoken_entry = tk.Entry(tlgrm_frame, width=60)
         tlgrm_bottoken_entry.insert(0, c.DECODED_BOTTOKEN)
         tlgrm_bottoken_entry.grid(row=1, column=1)
 
         tlgrm_channelid_label = tk.Label(tlgrm_frame, text="channelid: ")
         tlgrm_channelid_label.grid(row=2, column=0, sticky="nw")
-        tlgrm_channelid_entry = tk.Entry(tlgrm_frame, width=30)
+        tlgrm_channelid_entry = tk.Entry(tlgrm_frame, width=60)
         tlgrm_channelid_entry.insert(0, c.CHANNELID)
         tlgrm_channelid_entry.grid(row=2, column=1)
 
         tlgrm_operator_label = tk.Label(tlgrm_frame, text="operator: ")
         tlgrm_operator_label.grid(row=3, column=0, sticky="nw")
-        tlgrm_operator_entry = tk.Entry(tlgrm_frame, width=30)
+        tlgrm_operator_entry = tk.Entry(tlgrm_frame, width=60)
         tlgrm_operator_entry.insert(0, c.OPERATOR)
         tlgrm_operator_entry.grid(row=3, column=1)
 
         tlgrm_currency_label = tk.Label(tlgrm_frame, text="currency: ")
         tlgrm_currency_label.grid(row=4, column=0, sticky="nw")
-        tlgrm_currency_entry = tk.Entry(tlgrm_frame, width=30)
+        tlgrm_currency_entry = tk.Entry(tlgrm_frame, width=60)
         tlgrm_currency_entry.insert(0, c.CURRENCY)
         tlgrm_currency_entry.grid(row=4, column=1)
 
@@ -270,9 +319,11 @@ class TMenuApp:
         button_frame = tk.Frame(settings_window)
         button_frame.pack(side=tk.BOTTOM, pady=10)
 
-        # Получите значения Entry виджетов
+        # !!! Получите значения Entry виджетов !!!
+
         entries = {
             'login': main_login_entry,
+            'mode': main_mode_entry,
 
             'server': sql_server_entry,
             'db': sql_db_entry,
@@ -289,6 +340,12 @@ class TMenuApp:
 
             'adb': aloha_db_entry,
             'agroups': aloha_groups_entry,
+
+            'csv': shopify_csv_entry,
+            'csv_from': shopify_from_entry,
+            'csv_to': shopify_to_entry,
+            'csv_groups': shopify_groups_entry,
+            'csv_group_by': shopify_groupby_entry,
 
             'bottoken': tlgrm_bottoken_entry,
             'channelid': tlgrm_channelid_entry,
