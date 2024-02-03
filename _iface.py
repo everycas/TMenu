@@ -13,7 +13,7 @@ class TMenuApp:
     def __init__(self, master=None, get_data_button=None, send_data_button=None, clear_data_button=None):
         self.master = master
         if self.master:
-            self.master.title("TMenu")
+            self.master.title("TMenu v.1.03 - RK7, Aloha, Shopify edition.")
             self.master.geometry("500x500")  # set size
             self.master.minsize(500, 500)
             self.master.maxsize(500, 500)

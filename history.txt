@@ -1,0 +1,4 @@
+TelegramMenu App History:
+12.2023 v1.01 - Import from RK7 functionality
+01.2024 v1.02 - Import from AlohaPOS functionality
+02.2024 v1.03 - Import from CSV (Shopify) functionality
