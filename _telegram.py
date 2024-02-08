@@ -4,6 +4,7 @@ import json as j  # work with json
 import requests as r  # work with telegram requests
 from urllib.parse import quote  # work with quotation
 import os  # work with os
+import time
 
 
 def write_new_firstmsg(file_path: str, query: str):
@@ -15,10 +16,11 @@ def write_new_firstmsg(file_path: str, query: str):
         u.log_msg(func_name, True, f"New '{file_path}' file created.")
 
 
-def send_firstmsg_to_channel(message: str, rk7groups: str, bottoken: str, channelid: str, history_path: str):
+def send_firstmsg_to_channel(message: str, groups: str, bottoken: str, channelid: str, history_path: str):
     """Send first/welcome message to telegram channel."""
     # Convert rk7groups string to list
-    groups_list = [f"#{group.strip()}" for group in rk7groups.split(',')]
+    groups_list = [f"#{group.strip()}" for group in groups.split(',')]
+
     # Header message text
     message_text = (message + ' '.join(groups_list))
 
@@ -43,7 +45,7 @@ def send_firstmsg_to_channel(message: str, rk7groups: str, bottoken: str, channe
             response_file.write(j.dumps(j.loads(response.text), indent=2, ensure_ascii=False))
 
 
-def send_docs_to_channel(docs: str, currency: str, operator: str, bottoken: str, channelid: str, history_path: str):
+def send_docs_to_channel2(docs: str, currency: str, operator: str, bottoken: str, channelid: str, history_path: str):
     """Scan directory and send all json docs files to the Telegram channel."""
 
     for filename in os.listdir(docs):
@@ -82,6 +84,60 @@ def send_docs_to_channel(docs: str, currency: str, operator: str, bottoken: str,
 
                 with open(history_filename, "w", encoding="utf-8") as response_file:
                     response_file.write(j.dumps(j.loads(response.text), indent=2, ensure_ascii=False))
+
+
+def send_docs_to_channel(docs: str, currency: str, operator: str, bottoken: str, channelid: str, history_path: str):
+    """Scan directory and send all json docs files to the Telegram channel."""
+
+    messages_per_chunk = 10
+    chunk_delay = 10  # seconds
+
+    # Get list of JSON files
+    json_files = [filename for filename in os.listdir(docs) if filename.endswith(".json")]
+    total_files = len(json_files)
+
+    for i in range(0, total_files, messages_per_chunk):
+        chunk_files = json_files[i:i + messages_per_chunk]
+
+        for filename in chunk_files:
+            filepath = os.path.join(docs, filename)
+
+            with open(filepath, "r", encoding="utf-8") as file:
+                json_content = j.load(file)
+
+                # Generate text message from json_content
+                telegram_message = (
+                    f"{json_content['Name']} - {json_content['Price']} {currency}\n\n"
+                    f"{json_content['Comment']}\n\n"
+                    f"Код товара {json_content['Code']}\n"
+                    f"Группа {quote('#' + json_content['Group'])}"
+                )
+                # Inline keyboard markup with "Order" button
+                inline_keyboard = [
+                    [
+                        {"text": "Chat", "url": f't.me/{operator}'},
+                        {"text": "Add to Cart", "callback_data": "add_to_cart"}
+                    ]
+                ]
+                # send photo and message with inline keyboard
+                files = {'photo': open(json_content['Image'], 'rb')}
+
+                url = (f'https://api.telegram.org/bot{bottoken}'
+                       f'/sendPhoto?chat_id={channelid}'
+                       f'&caption={telegram_message}'
+                       f'&reply_markup={j.dumps({"inline_keyboard": inline_keyboard})}')
+                response = r.post(url, files=files)
+
+                # Save response to history folder
+                history_filename = os.path.join(history_path, f"{json_content['Code']}_response.json")
+
+                with open(history_filename, "w", encoding="utf-8") as response_file:
+                    response_file.write(j.dumps(j.loads(response.text), indent=2, ensure_ascii=False))
+
+                time.sleep(1)  # Add a small delay between each message to avoid hitting rate limits
+
+        if i + messages_per_chunk < total_files:
+            time.sleep(chunk_delay)  # Pause for chunk_delay seconds before sending the next chunk
 
 
 def clear_channel_history(docs_path: str, bot_token: str, channel_id: str, history_path: str):

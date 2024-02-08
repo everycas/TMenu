@@ -18,17 +18,17 @@ def get_data_button():
     if u.is_directory_empty(c.DOCS) and u.is_directory_empty(c.HISTORY):
 
         try:
-            if c.MODE == '1':  # Режим выгрузки данных из RK7 SQL DB
+            if c.GET_MODE == '1':  # Режим выгрузки данных из RK7 SQL DB
                 connection = q.connect_server(c.SRV_NAME, c.DB_NAME, c.USR_NAME, c.DECODED_PSW)
                 rows = q.get_data(connection, c.RK7QUERY)
                 q.write_data(rows, c.RK7GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
                 q.close_connection(connection)
 
-            elif c.MODE == '2':  # Режим выгрузки данных из ALOHA POS
+            elif c.GET_MODE == '2':  # Режим выгрузки данных из ALOHA POS
                 data_rows = a.get_data(c.ALOHA_DB)
                 a.write_data(data_rows, c.ALOHA_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 
-            elif c.MODE == '3':  # Режим выгрузки данных из CSV
+            elif c.GET_MODE == '3':  # Режим выгрузки данных из CSV
                 csv_rows = s.get_data(c.CSV_FILE, c.CSV_FROM, c.CSV_TO, c.CSV_GROUP_BY, c.CSV_GROUPS, c.CODEPAGE)
                 s.write_data(csv_rows, c.CSV_GROUPS, c.DOCS, c.IMAGES, c.NOIMAGE)
 
@@ -50,7 +50,14 @@ def send_data_button():
     func_name = u.get_func_name()
     firstmsg = u.read_text_from_file(c.FIRSTMSG)
     try:
-        t.send_firstmsg_to_channel(firstmsg, c.RK7GROUPS, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
+        if c.GET_MODE == '1':  # SQL RK7
+            selected_groups = c.RK7GROUPS
+        elif c.GET_MODE == '2':  # DBF Aloha
+            selected_groups = c.ALOHA_GROUPS
+        else:  # CSV Shopify
+            selected_groups = c.CSV_GROUPS
+
+        t.send_firstmsg_to_channel(firstmsg, selected_groups, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
         t.send_docs_to_channel(c.DOCS, c.CURRENCY, c.OPERATOR, c.DECODED_BOTTOKEN, c.CHANNELID, c.HISTORY)
     except Exception as e:
         u.log_msg(func_name, True, e)

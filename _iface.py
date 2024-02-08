@@ -150,7 +150,7 @@ class TMenuApp:
         main_mode_label = tk.Label(main_frame, text="mode: ")
         main_mode_label.grid(row=2, column=0, sticky='nw')
         main_mode_entry = tk.Entry(main_frame, width=60)
-        main_mode_entry.insert(0, c.MODE)
+        main_mode_entry.insert(0, c.GET_MODE)
         main_mode_entry.grid(row=2, column=1)
 
 
